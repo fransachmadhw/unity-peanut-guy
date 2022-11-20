@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7397137975640516148, guid: 474c64e7b6302304bb04e77a9e8809dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.47
+      value: -17.75
       objectReference: {fileID: 0}
     - target: {fileID: 7397137975640516148, guid: 474c64e7b6302304bb04e77a9e8809dc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -378,6 +378,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &405270725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2644991042193281520, guid: bd117f6e0af0c2942926e61c209b253f, type: 3}
+  m_PrefabInstance: {fileID: 1845691469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &685837666
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -990,6 +995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07ec32bcd6a21e34d9d0be169af45608, type: 3}
+--- !u!1 &1795093440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2644991042193281520, guid: bd117f6e0af0c2942926e61c209b253f, type: 3}
+  m_PrefabInstance: {fileID: 2644991041833589140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1845691469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1154,6 +1164,7 @@ GameObject:
   - component: {fileID: 1934681358}
   - component: {fileID: 1934681357}
   - component: {fileID: 1934681356}
+  - component: {fileID: 1934681360}
   m_Layer: 0
   m_Name: GroundSlide
   m_TagString: Slide
@@ -1237,6 +1248,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934681360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934681355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9313b1b6861d84bbef36a699b1ad4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tes:
+  - {fileID: 1795093440}
+  - {fileID: 405270725}
 --- !u!1 &1936880347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2086647881361348128, guid: 943c29498ab959842b6d7bee1f42370e, type: 3}
       propertyPath: m_Mass
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2086647881361348129, guid: 943c29498ab959842b6d7bee1f42370e, type: 3}
       propertyPath: cam
@@ -1619,6 +1645,10 @@ PrefabInstance:
     - target: {fileID: 2644991042193281520, guid: bd117f6e0af0c2942926e61c209b253f, type: 3}
       propertyPath: m_Name
       value: FallPlat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644991042193281520, guid: bd117f6e0af0c2942926e61c209b253f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2644991042193281532, guid: bd117f6e0af0c2942926e61c209b253f, type: 3}
       propertyPath: m_RootOrder
@@ -1847,6 +1877,10 @@ PrefabInstance:
     - target: {fileID: 4416347176131427352, guid: 3925e022072f0474a8dab88c2fdaf0ce, type: 3}
       propertyPath: m_Name
       value: Rotator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416347176131427352, guid: 3925e022072f0474a8dab88c2fdaf0ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416347176131427356, guid: 3925e022072f0474a8dab88c2fdaf0ce, type: 3}
       propertyPath: m_RootOrder
@@ -2143,7 +2177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7397137975640516148, guid: 474c64e7b6302304bb04e77a9e8809dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.47
+      value: -16.26
       objectReference: {fileID: 0}
     - target: {fileID: 7397137975640516148, guid: 474c64e7b6302304bb04e77a9e8809dc, type: 3}
       propertyPath: m_LocalPosition.y

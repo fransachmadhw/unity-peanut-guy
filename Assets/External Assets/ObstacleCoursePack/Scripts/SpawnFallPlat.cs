@@ -1,11 +1,21 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallPlat : MonoBehaviour
+public class SpawnFallPlat : MonoBehaviour
 {
-    public float fallTime = 0.5f;
+    // Start is called before the first frame update
+    public GameObject[] tes;
+    void Start()
+    {
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -14,14 +24,15 @@ public class FallPlat : MonoBehaviour
         //Debug.DrawRay(contact.point, contact.normal, Color.white);
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(Fall(fallTime));
+            StartCoroutine(Spawn(3));
         }
         // }
     }
 
-    IEnumerator Fall(float time)
+    IEnumerator Spawn(float time)
     {
         yield return new WaitForSeconds(time);
-        gameObject.SetActive(false);
+        tes[0].SetActive(true);
+        tes[1].SetActive(true);
     }
 }
