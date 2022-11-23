@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Finish : MonoBehaviour
 {
     public MeshRenderer finish;
     public KeyDetection keyDetection;
     public GameObject finishTemp;
+    public int nextLevel;
+    public TMP_Text congrats;
+    public TMP_Text nextLevelCountdown;
     // Start is called before the first frame update
     void Start()
     {
-
+        congrats.enabled = false;
+        nextLevelCountdown.enabled = false;
     }
 
     // Update is called once per frame
@@ -30,8 +35,21 @@ public class Finish : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                SceneManager.LoadScene("Level2");
+                StartCoroutine(Menang());
             }
         }
+    }
+
+    public IEnumerator Menang()
+    {
+        congrats.enabled = true;
+        nextLevelCountdown.enabled = true;
+        // isMoving = false;
+        for (int i = 5; i > 0; i--)
+        {
+            nextLevelCountdown.text = $"Switching to next level in {i}";
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene("Level" + nextLevel);
     }
 }
