@@ -7,8 +7,8 @@ using TMPro;
 public class KeyDetection : MonoBehaviour
 {
     public int totalKey = 0;
-    public TMP_Text key;
-    public TMP_Text keyStatus;
+    public Text key;
+    public RawImage keyStatus;
     public AudioClip PickUpKey;
     [Range(0, 10)] public float PickUpKeyVolume = 0.5f;
     // Start is called before the first frame update

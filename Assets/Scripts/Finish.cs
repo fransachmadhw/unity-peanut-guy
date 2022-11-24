@@ -9,6 +9,7 @@ public class Finish : MonoBehaviour
     public MeshRenderer finish;
     public KeyDetection keyDetection;
     public GameObject finishTemp;
+    public GameObject confetti;
     public int nextLevel;
     public TMP_Text congrats;
     public TMP_Text nextLevelCountdown;
@@ -17,6 +18,7 @@ public class Finish : MonoBehaviour
     {
         congrats.enabled = false;
         nextLevelCountdown.enabled = false;
+        confetti.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Finish : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                confetti.SetActive(true);
                 StartCoroutine(Menang());
             }
         }
