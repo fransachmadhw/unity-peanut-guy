@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public bool pause = false;
+    public GameOver referensiGameOver;
     public GameObject pauseOverlay;
     public GameObject pauseMenu;
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
-    public Animator test;
+    public Animator pauseOverlayAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,13 +37,15 @@ public class Pause : MonoBehaviour
                 playerControl.enabled = false;
 
             }
-        }
-        if (test.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-        {
-            Time.timeScale = 0;
+
+
         }
         if (pause)
         {
+            if (pauseOverlayAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                Time.timeScale = 0;
+            }
             if (Input.GetKeyDown(KeyCode.X))
             {
                 // pause = false;
@@ -87,6 +90,8 @@ public class Pause : MonoBehaviour
 
     public void toMainMenu()
     {
+        pause = false;
+        referensiGameOver.isGameOver = false;
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
         mouseInput.cursorInputForLook = true;

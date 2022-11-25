@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class FallDetect : MonoBehaviour
 {
-    public Vector3 reset;
-    public GameObject fall;
+    public GameOver scriptGameOver;
+    // public Vector3 reset;
+    // public GameObject fall;
     // Start is called before the first frame update
-    
-    void Awake(){
-        reset = transform.position;
-    }
+
+    // void Awake(){
+    //     reset = transform.position;
+    // }
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnCollisionEnter(Collision collision)
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.tag == "fall")
+    //     {
+    //         fall.transform.position = reset;
+    //         Debug.Log("Jatuh");
+    //     }
+    // }
+
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "fall")
+        if (other.gameObject.tag == "Player")
         {
-            fall.transform.position = reset;
-            Debug.Log("Jatuh");
+            scriptGameOver.isGameOver = true;
         }
     }
 

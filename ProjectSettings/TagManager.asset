@@ -11,6 +11,7 @@ TagManager:
   - CinemachineTarget
   - Slide
   - PlayerTabrak
+  - Ground
   layers:
   - Default
   - TransparentFX

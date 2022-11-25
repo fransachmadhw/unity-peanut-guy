@@ -11,13 +11,11 @@ public class Finish : MonoBehaviour
     public GameObject finishTemp;
     public GameObject confetti;
     public int nextLevel;
-    public TMP_Text congrats;
-    public TMP_Text nextLevelCountdown;
+    public GameObject congrats;
     // Start is called before the first frame update
     void Start()
     {
-        congrats.enabled = false;
-        nextLevelCountdown.enabled = false;
+        congrats.SetActive(false);
         confetti.SetActive(false);
     }
 
@@ -38,21 +36,22 @@ public class Finish : MonoBehaviour
             if (other.gameObject.tag == "Player")
             {
                 confetti.SetActive(true);
-                StartCoroutine(Menang());
+                Menang();
             }
         }
     }
 
-    public IEnumerator Menang()
+    public void Menang()
     {
-        congrats.enabled = true;
-        nextLevelCountdown.enabled = true;
-        // isMoving = false;
-        for (int i = 5; i > 0; i--)
-        {
-            nextLevelCountdown.text = $"Switching to next level in {i}";
-            yield return new WaitForSeconds(1);
-        }
+        congrats.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void goToNextLevel()
+    {
         SceneManager.LoadScene("Level" + nextLevel);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
