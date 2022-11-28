@@ -11,6 +11,8 @@ public class GameOver : MonoBehaviour
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
     public Animator pauseOverlayAnim;
+    public Pause pauseScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,16 @@ public class GameOver : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            {
+                restartGame();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
+                pauseScript.toMainMenu();
+            }
         }
 
     }
@@ -49,6 +61,6 @@ public class GameOver : MonoBehaviour
         mouseInput.cursorInputForLook = true;
         mouseInput.cursorLocked = true;
         playerControl.enabled = true;
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

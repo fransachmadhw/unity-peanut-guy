@@ -35,10 +35,19 @@ public class Pause : MonoBehaviour
                 pauseOverlay.SetActive(true);
                 pauseMenu.SetActive(true);
                 playerControl.enabled = false;
-
             }
 
-
+            if (Input.GetKeyDown(KeyCode.Menu))
+            {
+                pause = true;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                mouseInput.cursorInputForLook = false;
+                mouseInput.cursorLocked = false;
+                pauseOverlay.SetActive(true);
+                pauseMenu.SetActive(true);
+                playerControl.enabled = false;
+            }
         }
         if (pause)
         {
@@ -46,22 +55,13 @@ public class Pause : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
-                // pause = false;
-                // Cursor.visible = false;
-                // Cursor.lockState = CursorLockMode.Locked;
-                // mouseInput.cursorInputForLook = true;
-                // mouseInput.cursorLocked = true;
-                // pauseOverlay.enabled = false;
-                // pauseMenu.SetActive(false);
-                // playerControl.enabled = true;
-                // Time.timeScale = 1;
+                toMainMenu();
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            {
                 resumeGame();
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                mouseInput.cursorInputForLook = true;
-                mouseInput.cursorLocked = true;
             }
         }
         // else if (pause && Input.anyKeyDown)

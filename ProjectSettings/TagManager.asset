@@ -12,6 +12,7 @@ TagManager:
   - Slide
   - PlayerTabrak
   - Ground
+  - CustomCamera
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 3685996403
+    locked: 0
+  - name: 2
+    uniqueID: 4277898005
+    locked: 0
+  - name: 3
+    uniqueID: 4159471641
+    locked: 0
+  - name: 4
+    uniqueID: 44423397
+    locked: 0
+  - name: 5
+    uniqueID: 3817085633
     locked: 0
