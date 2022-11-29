@@ -31,7 +31,7 @@ public class Finish : MonoBehaviour
         }
         if (isFinished)
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
                 goToNextLevel();
             }

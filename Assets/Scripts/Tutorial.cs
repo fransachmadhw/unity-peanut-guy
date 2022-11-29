@@ -33,15 +33,15 @@ public class Tutorial : MonoBehaviour
     {
         if (isTutorial)
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
                 understand();
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            if (Input.GetKeyDown(KeyCode.JoystickButton1))
             {
                 nextTutorial();
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+            if (Input.GetKeyDown(KeyCode.JoystickButton2))
             {
                 previousTutorial();
             }

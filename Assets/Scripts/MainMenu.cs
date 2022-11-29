@@ -7,16 +7,19 @@ public class MainMenu : MonoBehaviour
 {
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
+    public AudioSource audioMenu;
+    [Range(0, 10)] public float audioVolume = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioMenu.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+        audioMenu.volume = audioVolume;
+        if (Input.GetKeyDown(KeyCode.JoystickButton7))
         {
             Play();
         }

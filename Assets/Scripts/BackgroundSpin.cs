@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackgroundSpin : MonoBehaviour
 {
-    private float rotateSpeed = 90f;
+    public float rotateSpeed = 90f;
     // Start is called before the first frame update
     void Start()
     {

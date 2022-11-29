@@ -39,12 +39,12 @@ public class GameOver : MonoBehaviour
                 Time.timeScale = 0;
             }
 
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
                 restartGame();
             }
 
-            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 pauseScript.toMainMenu();
             }

@@ -27,26 +27,12 @@ public class Pause : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                pause = true;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                mouseInput.cursorInputForLook = false;
-                mouseInput.cursorLocked = false;
-                pauseOverlay.SetActive(true);
-                pauseMenu.SetActive(true);
-                playerControl.enabled = false;
+                pauseGame();
             }
 
-            if (Input.GetKeyDown(KeyCode.Menu))
+            if (Input.GetKeyDown(KeyCode.JoystickButton7))
             {
-                pause = true;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                mouseInput.cursorInputForLook = false;
-                mouseInput.cursorLocked = false;
-                pauseOverlay.SetActive(true);
-                pauseMenu.SetActive(true);
-                playerControl.enabled = false;
+                pauseGame();
             }
         }
         if (pause)
@@ -55,24 +41,31 @@ public class Pause : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
                 toMainMenu();
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+            if (Input.GetKeyDown(KeyCode.JoystickButton3))
             {
                 resumeGame();
             }
+            // if (Input.GetKeyDown(KeyCode.JoystickButton7))
+            // {
+            //     resumeGame();
+            // }
         }
-        // else if (pause && Input.anyKeyDown)
-        // {
-        //     pauseOverlay.enabled = false;
-        //     pause = false;
-        //     playerControl.enabled = true;
-        //     // player.myText.text = "";
-        //     // player.myText2.gameObject.SetActive(false);
-        //     Time.timeScale = 1;
-        // }
+    }
+
+    public void pauseGame()
+    {
+        pause = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        mouseInput.cursorInputForLook = false;
+        mouseInput.cursorLocked = false;
+        pauseOverlay.SetActive(true);
+        pauseMenu.SetActive(true);
+        playerControl.enabled = false;
     }
 
     public void resumeGame()
