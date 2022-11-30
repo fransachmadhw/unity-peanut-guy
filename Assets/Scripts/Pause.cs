@@ -13,11 +13,14 @@ public class Pause : MonoBehaviour
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
     public Animator pauseOverlayAnim;
+    // public Level1 scriptLevel1;
+    // private AudioSource musicLevel;
     // Start is called before the first frame update
     void Start()
     {
         pauseOverlay.SetActive(false);
         pauseMenu.SetActive(false);
+        // musicLevel = scriptLevel1.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,6 +61,7 @@ public class Pause : MonoBehaviour
 
     public void pauseGame()
     {
+        // musicLevel.Pause();
         pause = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -70,6 +74,7 @@ public class Pause : MonoBehaviour
 
     public void resumeGame()
     {
+        // musicLevel.UnPause();
         pause = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

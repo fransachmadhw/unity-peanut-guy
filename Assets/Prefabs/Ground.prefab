@@ -109,3 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptGameOver: {fileID: 0}
+  gameOverClip: {fileID: 8300000, guid: 25cc28b14e265a04a93a2cbf7568753a, type: 3}
+  player: {fileID: 0}
+  gameOverVolume: 1

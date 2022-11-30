@@ -14,6 +14,8 @@ public class Finish : MonoBehaviour
     public GameObject congrats;
     public StarterAssets.ThirdPersonController playerControl;
     public bool isFinished;
+    public AudioClip levelWinClip;
+    [Range(0, 1)] public float levelWinVolume = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class Finish : MonoBehaviour
                 confetti.SetActive(true);
                 Menang();
                 playerControl.enabled = false;
+                AudioSource.PlayClipAtPoint(levelWinClip, other.gameObject.transform.position, levelWinVolume);
             }
         }
     }
@@ -62,8 +65,16 @@ public class Finish : MonoBehaviour
     public void goToNextLevel()
     {
         isFinished = false;
-        SceneManager.LoadScene("Level" + nextLevel);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+
+        if (nextLevel == 6)
+        {
+            SceneManager.LoadScene("Win");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + nextLevel);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

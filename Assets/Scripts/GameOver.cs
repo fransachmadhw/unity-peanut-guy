@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public bool isGameOver;
+    public AudioSource gameOverAudio;
     public GameObject pauseOverlay;
     public GameObject gameOverMenu;
     public StarterAssets.ThirdPersonController playerControl;
@@ -25,6 +26,7 @@ public class GameOver : MonoBehaviour
     {
         if (isGameOver)
         {
+            // gameOverAudio.Play();
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             mouseInput.cursorInputForLook = false;

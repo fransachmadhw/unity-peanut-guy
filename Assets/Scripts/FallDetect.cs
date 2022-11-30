@@ -5,6 +5,9 @@ using UnityEngine;
 public class FallDetect : MonoBehaviour
 {
     public GameOver scriptGameOver;
+    public AudioClip gameOverClip;
+    public GameObject player;
+    [Range(0, 1)] public float gameOverVolume = 0.5f;
     // public Vector3 reset;
     // public GameObject fall;
     // Start is called before the first frame update
@@ -38,6 +41,7 @@ public class FallDetect : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             scriptGameOver.isGameOver = true;
+            AudioSource.PlayClipAtPoint(gameOverClip, other.gameObject.transform.position, gameOverVolume);
         }
     }
 
