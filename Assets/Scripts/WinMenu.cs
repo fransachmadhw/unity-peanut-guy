@@ -8,7 +8,7 @@ public class WinMenu : MonoBehaviour
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
     public AudioSource winMenu;
-    [Range(0, 10)] public float winMenuVolume = 0.5f;
+    [Range(0, 1)] public float winMenuVolume = 0.5f;
     // Start is called before the first frame update
     void Start()
     {

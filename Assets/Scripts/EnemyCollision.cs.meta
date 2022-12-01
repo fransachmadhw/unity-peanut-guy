@@ -3,7 +3,10 @@ guid: 2dd9aa13c5a7f394eb507ba61834b704
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scriptGameOver: {instanceID: 0}
+  - punchClip: {instanceID: 0}
+  - gameOverClip: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

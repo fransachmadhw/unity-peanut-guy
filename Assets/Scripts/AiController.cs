@@ -68,6 +68,7 @@ public class AiController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, MaxDist);
         //Gizmos.DrawRay(transform.position, (transform.forward-transform.up).normalized * 10);
     }
 
