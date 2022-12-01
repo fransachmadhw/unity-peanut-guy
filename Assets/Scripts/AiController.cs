@@ -12,6 +12,7 @@ public class AiController : MonoBehaviour
     public float MinDist = 1f;
     Animator animator, Panimator;
     public LayerMask layerMask;
+    public Finish scriptFinish;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class AiController : MonoBehaviour
 
         float distance = Vector3.Distance(Player.position, transform.position);
 
-        if (distance <= lookRadius)
+        if (!scriptFinish.isFinished && distance <= lookRadius)
         {
             transform.LookAt(Player);
             if (Physics.Raycast(ray, out hitData, 3, layerMask, QueryTriggerInteraction.Ignore))

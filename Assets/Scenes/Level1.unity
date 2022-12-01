@@ -7612,6 +7612,10 @@ PrefabInstance:
       propertyPath: lookRadius
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5558824976065072201, guid: 5bab08eefa5e1de48908ad7372f98fbd, type: 3}
+      propertyPath: scriptFinish
+      value: 
+      objectReference: {fileID: 1500762633}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bab08eefa5e1de48908ad7372f98fbd, type: 3}
 --- !u!1001 &1237700958
