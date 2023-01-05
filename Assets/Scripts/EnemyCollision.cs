@@ -25,10 +25,10 @@ public class EnemyCollision : MonoBehaviour
         if (other.gameObject.tag == "PlayerTabrak")
         {
             AudioSource.PlayClipAtPoint(punchClip, transform.position, punchVolume);
-            // Destroy(punchClip);
+            //Destroy(punchClip);
             scriptGameOver.isGameOver = true;
             AudioSource.PlayClipAtPoint(gameOverClip, other.gameObject.transform.position, gameOverVolume);
-            // Destroy(gameOverClip);
+            //Destroy(gameOverClip);
         }
     }
 }

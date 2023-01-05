@@ -13,6 +13,8 @@ public class Pause : MonoBehaviour
     public StarterAssets.ThirdPersonController playerControl;
     public StarterAssets.StarterAssetsInputs mouseInput;
     public Animator pauseOverlayAnim;
+    public levelShowcase scriptShowcase;
+    // public Tutorial scriptTutorial;
     // public Level1 scriptLevel1;
     // private AudioSource musicLevel;
     // Start is called before the first frame update
@@ -26,7 +28,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pause)
+        if (!pause && !scriptShowcase.isShowcasing)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {

@@ -25,7 +25,7 @@ public class Tutorial : MonoBehaviour
         mouseInput.cursorInputForLook = false;
         mouseInput.cursorLocked = false;
         playerControl.enabled = false;
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
